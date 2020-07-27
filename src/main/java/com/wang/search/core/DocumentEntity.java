@@ -7,6 +7,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -20,7 +21,8 @@ import java.util.Date;
 @Data
 @Document(indexName = "document", createIndex = false, useServerConfiguration = true)
 @Accessors(chain = true)
-public class DocumentEntity {
+public class DocumentEntity implements Serializable {
+    private static final long serialVersionUID = 1751743958756202884L;
     /**
      * 文档ID
      */

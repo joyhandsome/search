@@ -3,14 +3,15 @@ server:
   servlet:
     context-path: /search
 spring:
-  elasticsearch:
-    rest:
-      uris: 127.0.0.1:9002
   datasource:
     name: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc://mysql://127.0.0.1:3306/search
+  data:
+    elasticsearch:
+      cluster-name: elastic
+      cluster-nodes: localhost:9300
 elasticjob:
   serverList: 127.0.0.1:2181
   namespace: elastic_job
@@ -20,9 +21,3 @@ elasticjob:
   time:
     first: 1
     second: 2
-  data:
-    elasticsearch:
-      client:
-        reactive:
-          connection-timeout: 10000
-          endpoints: 127.0.0.1:9200
