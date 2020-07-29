@@ -13,6 +13,7 @@ import lombok.Data;
  */
 @Data
 public class BusinessException extends RuntimeException {
+    private static final long serialVersionUID = 7215199966890035783L;
     /**
      * 异常错误码
      */
@@ -23,9 +24,9 @@ public class BusinessException extends RuntimeException {
     private String description;
 
     public BusinessException(ReturnCode returnCode) {
-        super(returnCode.getDescription());
+        super(returnCode.getMessage());
         this.code = returnCode.getCode();
-        this.description = returnCode.getDescription();
+        this.description = returnCode.getMessage();
     }
 
 

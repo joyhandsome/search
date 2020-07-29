@@ -1,34 +1,45 @@
 package com.wang.search.constant;
 
+import lombok.Data;
+
 /**
- * 错误码常量
+ * 返回码
  *
  * @author wangjunhao
  * @version 1.0
- * @date 2020/6/6 12:33
+ * @date 2020/7/29 13:34
  * @since JDK 1.8
  */
 public enum ReturnCode {
 
     /**
-     * 返回成功
+     * 成功
      */
-    SUCCESS(200, "请求成功"),
-    DOCUMENT_FORMAT_ERROR(1001, "文件类型错误"),
-    DOCUMENT_NOT_FOUND(1002,"未找到对应文件"),
-    ;
+    SUCESS(200, "成功"),;
 
-    private ReturnCode(int code, String description) {
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
     }
 
     private int code;
-    private String description;
 
-    public int getCode() {
-        return this.code;
+    public String getMessage() {
+        return message;
     }
 
-    public String getDescription() {
-        return this.description;
+    public void setMessage(String message) {
+        this.message = message;
     }
+
+    private String message;
+
+    ReturnCode(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
 }

@@ -2,22 +2,3 @@ server:
   port: 8099
   servlet:
     context-path: /search
-spring:
-  datasource:
-    name: root
-    password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc://mysql://127.0.0.1:3306/search
-  data:
-    elasticsearch:
-      cluster-name: elastic
-      cluster-nodes: localhost:9300
-elasticjob:
-  serverList: 127.0.0.1:2181
-  namespace: elastic_job
-  job:
-    first: 1/10 * * * * ?
-    second: 2/10 * * * * ?
-  time:
-    first: 1
-    second: 2

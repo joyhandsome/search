@@ -1,5 +1,6 @@
 package com.wang.search.utils;
 
+
 import com.google.gson.Gson;
 
 /**
