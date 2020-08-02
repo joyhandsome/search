@@ -1,5 +1,7 @@
 package com.wang.search.service;
 
+import com.wang.search.core.DocumentEntity;
+
 import java.io.IOException;
 
 /**
@@ -12,4 +14,5 @@ import java.io.IOException;
  */
 public interface EsManageService {
     String search() throws IOException;
+    void add(DocumentEntity documentEntity);
 }

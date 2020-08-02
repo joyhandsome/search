@@ -1,14 +1,11 @@
 package com.wang.search.controller;
 
-import com.netflix.hystrix.HystrixObservableCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.wang.search.service.EsManageService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * 测试controller
@@ -31,4 +28,8 @@ public class TestDocumentController {
         return "ok";
     }
 
+    @RequestMapping("/save")
+    public String save() {
+        return "ok";
+    }
 }
